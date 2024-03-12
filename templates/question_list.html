@@ -1,0 +1,59 @@
+<!-- lc_questions/templates/question_list.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question List</title>
+    <style>
+        /* Example CSS for styling the question list */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .question {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .question h2 {
+            margin-top: 0;
+            color: #666;
+        }
+        .question p {
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Question List</h1>
+        {% if questions %}
+            {% for question in questions %}
+                <div class="question">
+                    <h2>{{ question.title }}</h2>
+                    <p>{{ question.description }}</p>
+                    <!-- Add more details as needed -->
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No questions available.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
